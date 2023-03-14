@@ -16,29 +16,34 @@ public class BookShelf implements Iterable<Book> {
   public BookShelf(int maxsize) {
     // 배열 생성
     // this.books = new Book[5]; // 배열 크기 결정 후 변경 x(고정)
-    // 따라서 생성될때 크기를 받아 일반화 가능 
+    // 따라서 생성될때 크기를 받아 일반화 가능
     this.books = new Book[maxsize];
   }
 
   // 책 꽂는 메소드
-  public void appendBook(Book book){
+  public void appendBook(Book book) {
     // book을 books에 담으면 됨.
-    this.books[last]=book; // books가 속성인경우 -> this를 붙여줌
+    this.books[last] = book; // books가 속성인경우 -> this를 붙여줌
     last++; // 책 한권 꽂힐 때 마다 이동시켜줌. 배열의 일반적인 경우.
   }
+
   // 책 꺼내는 메서드
-  public Book getBookAt(int index){
+  public Book getBookAt(int index) {
     return books[index];
   }
 
   // 책 개수를 리턴하는 메서드
-  public int getBookCount(){
+  public int getBookCount() {
     return last; // last-1일수도 있음.
   }
 
   // iterator 반환하는 메소드
   // public BookShelfIterator iterator(){
-  public Iterator<Book> iterator(){
+  // 부모클래스에 있는걸 override 한 것임을 명시.
+
+  // 어노테이션: 표시.
+  @Override
+  public Iterator<Book> iterator() {
     return new BookShelfIterator(this); // 현재 책꽂이와 iterator가 연결됨.
   }
 }
