@@ -33,7 +33,7 @@ public class BookShelfIterator implements Iterator<Book> {
   // 2. 다음 책을 반환하는 메서드
   @Override
   public Book next() {
-    Book book = this.bookShelf.getBookAt(index);
+    Book book = this.bookShelf.getBookFrom(index);
     index++; // next 호출마다 다음책, 그 다음책 호출.
     return book;
   }
