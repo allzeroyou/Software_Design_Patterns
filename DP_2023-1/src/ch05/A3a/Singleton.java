@@ -5,10 +5,10 @@ public class Singleton {
 
     private Singleton() {
         System.out.println("인스턴스가 생성되었습니다.");
-        slowdown();
+        slowdown(); // 생성될 때 시간이 걸리도록 함. // 여러 스레드 왔다갔다 할 수 있도록 해 다른 객체를 생성하도록
     }
 
-    public static Singleton getInstance() {
+    public static Singleton getInstance() { // 싱글톤 객체 생성.
         if (singleton == null) {
             singleton = new Singleton();
         }
@@ -17,8 +17,10 @@ public class Singleton {
 
     private void slowdown() {
         try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
+            Thread.sleep(1000); // Thread 클래스 sleep 메소드 호출.
+            // cpu를 내놓고 잠을 잔다.
+            // 적어도 1초 걸리도록.
+        } catch (InterruptedException e) { // 
         }
     }
 }
