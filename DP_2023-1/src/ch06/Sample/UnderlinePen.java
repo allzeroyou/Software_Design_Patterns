@@ -2,7 +2,7 @@ package ch06.Sample;
 
 import ch06.Sample.framework.Product;
 
-public class UnderlinePen implements Product {
+public class UnderlinePen implements Product { // Product 상속
     private char ulchar;
 
     public UnderlinePen(char ulchar) {
