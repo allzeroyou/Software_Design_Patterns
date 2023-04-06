@@ -10,8 +10,8 @@ public class UnderlinePen implements Product {
     }
 
     // 복사 생성자 
-    public UnderlinePen(UnderlinePen prototype) {
-        this.ulchar = prototype.ulchar;
+    public UnderlinePen(UnderlinePen prototype) { // 같은 클래스의 인스턴스를 인수로 가짐
+        this.ulchar = prototype.ulchar; // 인스턴스 생성 시 필드를 복사하는 생성자.
     }
 
     @Override

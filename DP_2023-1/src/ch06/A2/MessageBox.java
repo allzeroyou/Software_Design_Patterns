@@ -10,8 +10,8 @@ public class MessageBox implements Product {
     }
 
     // 복사 생성자 
-    public MessageBox(MessageBox prototype) {
-        this.decochar = prototype.decochar;
+    public MessageBox(MessageBox prototype) { // 같은 클래스의 인스턴스를 인수로 가짐.
+        this.decochar = prototype.decochar; // 인스턴스 생성시 필드 복사
     }
 
     @Override

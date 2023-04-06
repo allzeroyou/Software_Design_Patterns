@@ -7,7 +7,7 @@ import java.util.Map;
 // 코드를 볼 때 부모타입으로 짠 코드는 좋은 코드 -> 유연성
 // 원칙: Programming to Interface/Abstract Class
 
-public class Manager {
+public class Manager { // 소스코드 안 구체적인 클래스 이름 없음 -> 재사용성 좋음.
   // Map<Key, Value> 쌍 저장
   private Map<String, Product> showcase = new HashMap<>();
 

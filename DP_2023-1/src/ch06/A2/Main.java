@@ -5,7 +5,7 @@ import ch06.A2.framework.Product;
 
 public class Main {
     public static void main(String[] args) {
-        // 準備
+        // 準備N
         Manager manager = new Manager();
         UnderlinePen upen = new UnderlinePen('-');
         MessageBox mbox = new MessageBox('*');
@@ -25,5 +25,10 @@ public class Main {
 
         Product p3 = manager.create("slash box");
         p3.use("Hello, world.");
+
+        // 복사 생성자 이용하기
+        MessageBox copy = new MessageBox(sbox);
+        copy.use("Duksung");
+
     }
 }
