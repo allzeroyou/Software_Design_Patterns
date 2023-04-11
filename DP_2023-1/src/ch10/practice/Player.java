@@ -1,14 +1,14 @@
 package ch10.practice;
 
 public class Player {
-  private String name;
+   // 선언과 동시에 초기화 해주는 습관 기르기
+  private String name = null;
 
-  private Strategy strategy; // 현재 전략을 보관 - 반환형: Strategy(부모타입)
-  // 전략 2개(WinningStrategy, ProbStrategy)
+  private Strategy strategy; // 현재 전략을 보관 - 반환형: Strategy(부모타입) // 전략 2개(WinningStrategy, ProbStrategy)
 
-  private int wincount;
-  private int losecount;
-  private int gamecount;
+  private int wincount = 0;
+  private int losecount = 0;
+  private int gamecount= 0;
 
   // 이름과 전략을 받아서 플레이어를 만든다
   public Player(String name, Strategy strategy) {
