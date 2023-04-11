@@ -12,11 +12,11 @@ public class WinningStrategy implements Strategy {
     }
 
     @Override
-    public Hand nextHand() {
-        if (!won) { // lose
-            prevHand = Hand.getHand(random.nextInt(3)); // nextInt: 0, 1, 2 중 하나 난수 생성
+    public Hand nextHand() { // 핵심 기능
+        if (!won) { // 직전에 졌으면
+            prevHand = Hand.getHand(random.nextInt(3)); // nextInt: 0, 1, 2 중 하나의 난수 생성
         }
-        return prevHand; // win -> 같은 손 리턴
+        return prevHand; // 직전에 이겼으면 같은 손 리턴
     }
 
     @Override
