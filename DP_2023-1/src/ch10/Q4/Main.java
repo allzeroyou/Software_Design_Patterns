@@ -3,15 +3,16 @@ package ch10.Q4;
 import java.util.*;
 
 class Main {
-    public static void main(String[] args) {
-        List<String> list = Arrays.asList("D", "B", "C", "E", "A");
+  public static void main(String[] args) {
+    // Arrays 클래스: asList-> 문자열로 들어온 걸 리스트로 만들어줌.
+    List<String> list = Arrays.asList("D", "B", "C", "E", "A");
 
-        // 사전순으로 작은 순서
-        list.sort( /* 미구현 */ );
-        System.out.println(list);
+    // 사전순으로 작은 순서
+    list.sort( /* 미구현 */ );
+    System.out.println(list);
 
-        // 사전순으로 큰 순서 
-        list.sort( /* 미구현 */ );
-        System.out.println(list);
-    }
+    // 사전순으로 큰 순서
+    list.sort( /* 미구현 */ );
+    System.out.println(list);
+  }
 }
