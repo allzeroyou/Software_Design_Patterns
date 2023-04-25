@@ -19,8 +19,8 @@ public class StringDisplay extends Display {
 
     @Override
     public String getRowText(int row) {
-        if (row != 0) {
-            throw new IndexOutOfBoundsException();
+        if (row != 0) { // 한 줄이기 때문에 row는 0임.
+            throw new IndexOutOfBoundsException(); // 예외 객체가 getRowText를 호출한 클라이언트에게 간다.
         }
         return string;
     }
