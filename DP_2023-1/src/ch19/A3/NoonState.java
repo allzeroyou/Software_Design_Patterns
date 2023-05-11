@@ -10,6 +10,7 @@ public class NoonState implements State {
         return singleton;
     }
 
+    // ⭐️ 상태 변경하는 코드 중요!
     @Override
     public void doClock(Context context, int hour) {
         if (hour < 9 || 17 <= hour) {
