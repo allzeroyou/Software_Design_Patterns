@@ -15,9 +15,9 @@ public abstract class Support {
         return next;
     }
 
-    // 트러블 해결 절차를 결정한다
+    // ⭐️ 트러블 해결 절차를 결정한다
     public void support(Trouble trouble) {
-        if (resolve(trouble)) {
+        if (resolve(trouble)) { // this.resolve : 메소드는 항상 앞에 this.를 가짐.
             done(trouble);
         } else if (next != null) {
             next.support(trouble);
