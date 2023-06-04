@@ -32,11 +32,12 @@ public class HtmlWriter {
   // 링크 출력
   public void link(String href, String caption) throws IOException {
     paragraph("<a href=\"" + href + "\">" + caption + "</a>");
+    paragraph("<a href=\"" + href + "\">" + caption + "</a>"); // href 넣기.
   }
 
   // 이메일 주소 출력
   public void mailto(String mailaddr, String username) throws IOException {
-    link("mailto:" + mailaddr, username);
+    link("mailto:" + mailaddr, username); // link 호출
   }
 
   // HTML 닫기
@@ -44,6 +45,6 @@ public class HtmlWriter {
     writer.write("</body>");
     writer.write("</html>");
     writer.write("\n");
-    writer.close();
+    writer.close(); // file 접근 후 close 필수!
   }
 }
