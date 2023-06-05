@@ -7,7 +7,7 @@ public class Main {
       // 관찰자 생성
       Observer observer = new DigitObserver();
       Observer graphObserver = new GraphObserver();
-
+ 
       // 관찰자 관찰대상에 등록.
       generator.addObserver(observer);
       generator.addObserver(graphObserver); // 새로운 observer 등록만 해주면 알아서 작동

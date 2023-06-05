@@ -17,14 +17,18 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
       super(columns);
     }
 
+    // ⭐️
     @Override
-    public void update(NumberGenerator generator) {
-      int number = generator.getNumber();
+    public void update(NumberGenerator generator) { // generator: 관찰대상
+
+      int number = generator.getNumber(); // 숫자를 얻음
+
       String text = number + ":";
       for (int i = 0; i < number; i++) {
         text += '*';
       }
-      setText(text);
+
+      setText(text); // 문자열 설정
     }
   }
 
@@ -33,16 +37,20 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
     private int number;
 
     @Override
-    public void update(NumberGenerator generator) {
+    public void update(NumberGenerator generator) { // 그림을 그린다.
       number = generator.getNumber();
-      repaint();
+      repaint(); // 도화지를 clear 한 후 숫자가 생성될때 마다 paint()를 호출함
     }
 
     public void paint(Graphics g) {
       int width = getWidth();
       int height = getHeight();
+
+      // 원 전체를 그림
       g.setColor(Color.white);
       g.fillArc(0, 0, width, height, 0, 360);
+
+      // 원호를 그림
       g.setColor(Color.red);
       g.fillArc(0, 0, width, height, 90, -number * 360 / 50);
     }
@@ -53,9 +61,15 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
   private Button buttonClose = new Button("Close");
 
   public FrameObserver() {
-    super("FrameObserver");
+    super("FrameObserver"); // 부모생성자
 
-    add(textGraph, BorderLayout.NORTH); //  위치지정
+    setLayout(new BorderLayout()); // 프레임 영역을 동서남북중앙으로 나눔
+
+    setBackground(Color.pink);
+
+    textGraph.setEditable(false); // text field 수정 불가
+
+    add(textGraph, BorderLayout.NORTH); // 위치지정
     add(canvasGraph, BorderLayout.CENTER);
     add(buttonClose, BorderLayout.SOUTH);
 
@@ -72,7 +86,7 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
 
   @Override
   public void update(NumberGenerator generator) {
-    textGraph.update(generator);
-    canvasGraph.update(generator);
+    textGraph.update(generator); // textGraph에 update 호출
+    canvasGraph.update(generator); // canvasGraph에 update 호출
   }
 }
