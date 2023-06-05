@@ -23,7 +23,7 @@ public class UpDownBorder extends Border {
 
     @Override
     public String getRowText(int row) {
-        if (row == 0 || row == getRows() - 1) {
+        if (row == 0 || row == getRows() - 1) { // row == getRows() - 1: 맨 아래
             // 맨 위와 맨 아래는 장식 문자만의 행
             return makeLine(borderChar, getColumns());
         } else {

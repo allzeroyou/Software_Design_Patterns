@@ -1,8 +1,8 @@
 package ch12.Sample;
 
-public class FullBorder extends Border { // 장식자이므로 장식자 상속
+public class FullBorder extends Border { // 장식자(FullBorder)이므로 장식자(Border) 상속
   public FullBorder(Display display) {
-    super(display); // 부모 생성자 호출(생성자 안에 super)
+    super(display); // 부모 생성자 호출(생성자 안에 super가 있으므로)
   }
 
   @Override
@@ -24,7 +24,7 @@ public class FullBorder extends Border { // 장식자이므로 장식자 상속
     } else if (row == display.getRows() + 1) { // 하단 테두리
       return "+" + makeLine('-', display.getColumns()) + "+";
     } else { // 기타
-      return "|" + display.getRowText(row - 1) + "|"; // 실제 text의 index는 행 - 1
+      return "|" + display.getRowText(row - 1) + "|"; // 실제 text의 index는 행 수 - 1 (row - 1)
     }
   }
 
